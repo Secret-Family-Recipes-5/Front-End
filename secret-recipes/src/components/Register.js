@@ -9,21 +9,21 @@ const Register = () => {
       username: '',
       password: '',
     }
-  
+
     const [formValues, setFormValues] = useState(initialFormValues);
-  
+
     const handleInput = (event) => {
       const { name, value } = event.target
-  
+
       setFormValues({
         ...formValues,
         [name]: value
       })
     }
-  
+
     const handleSubmit = (event) => {
       event.preventDefault()
-  
+
       // Axios PUT
     //   axiosWithAuth()
     //   .put('/api/register', formValues)
@@ -34,29 +34,34 @@ const Register = () => {
     //   })
     //   .catch(err => console.log(err))
     }
-  
+
     return (
       <div className='formContainer'>
-        <form onSubmit={handleSubmit} >
-  
-          <input
-            type='text'
-            name='username'
-            placeholder='Username'
-            value={formValues.username}
-            onChange={handleInput}
-          />
-  
-          <input
-            type='password'
-            name='password'
-            placeholder='Password'
-            value={formValues.password}
-            onChange={handleInput}
-          />
-  
-          <button>Register</button>
-        </form>
+        <div className='formWrapper'>
+          <h2 className='formTitle'>Register</h2>
+          <p className='formDesc'>The perfect solution to your lost family cookbook</p>
+
+          <form onSubmit={handleSubmit} >
+
+            <input
+              type='text'
+              name='username'
+              placeholder='Username'
+              value={formValues.username}
+              onChange={handleInput}
+            />
+
+            <input
+              type='password'
+              name='password'
+              placeholder='Password'
+              value={formValues.password}
+              onChange={handleInput}
+            />
+
+            <button>Sign up</button>
+          </form>
+        </div>
       </div>
     );
 }
