@@ -1,25 +1,22 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom'
-import Login from './Login'
+import Login from './components/Login'
+import Home from './components/Home';
+import Register from './components/Register';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-
-      <Login />
-
       <Switch>
 
-        <Route path='/home'>
+        {/* <PrivateRoute exact path='/home' component={Home} /> */}
 
-        </Route>
-        <Route path='/register'>
+        <Route exact path='/home' component={Home} />
 
-        </Route>
-        <Route path='/'>
+        <Route exact path='/register' component={Register} />
 
-        </Route>
+        <Route exact path='/' component={Login} />
 
       </Switch>
     </div>
