@@ -109,6 +109,25 @@ html {
 body {
   background-color: #f9f9f9;
 }
+.formContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+input,
+button {
+  padding: 10px 15px;
+  border: 1px solid #EEEEEE;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+button {
+  margin: 0;
+}
 .navContainer {
   background: white;
   border-bottom: 1px solid #EEEEEE;
