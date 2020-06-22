@@ -1,0 +1,173 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+ol,
+ul {
+  list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+}
+blockquote,
+q {
+  quotes: "" "";
+}
+html {
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 62.5%;
+}
+body {
+  background-color: #f9f9f9;
+}
+.formContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+input,
+button {
+  padding: 10px 15px;
+  border: 1px solid #EEEEEE;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+button {
+  margin: 0;
+}
+.navContainer {
+  background: white;
+  border-bottom: 1px solid #EEEEEE;
+}
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.logo a {
+  color: #111111;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+nav a {
+  margin-left: 20px;
+  color: #111111;
+  font-size: 1.6rem;
+}
+nav .createRecipe {
+  background: #8B0000;
+  border-radius: 5px;
+  padding: 9px 14px;
+  color: white;
+}
+.categoryWrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 20px;
+}
+.category {
+  padding: 9px 14px;
+  border: 1px solid #EEEEEE;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+.category a {
+  font-size: 1.6rem;
+}
