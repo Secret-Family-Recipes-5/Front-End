@@ -37,28 +37,31 @@ const Login = () => {
 
   return (
     <div className='formContainer'>
-      <h2>Login</h2>
-      <p>The perfect solution to your lost family cookbook</p>
-      <form onSubmit={handleSubmit} >
+      <div className='formWrapper'>
+        <h2 className='formTitle'>Login</h2>
+        <p className='formDesc'>The perfect solution to your lost family cookbook</p>
 
-        <input
-          type='text'
-          name='username'
-          placeholder='Username'
-          value={formValues.username}
-          onChange={handleInput}
-        />
+        <form onSubmit={handleSubmit} >
 
-        <input
-          type='password'
-          name='password'
-          placeholder='Password'
-          value={formValues.password}
-          onChange={handleInput}
-        />
+          <input
+            type='text'
+            name='username'
+            placeholder='Username'
+            value={formValues.username}
+            onChange={handleInput}
+          />
 
-        <button>Login</button>
-      </form>
+          <input
+            type='password'
+            name='password'
+            placeholder='Password'
+            value={formValues.password}
+            onChange={handleInput}
+          />
+
+          <button>Login</button>
+        </form>
+      </div>
     </div>
   );
 }
