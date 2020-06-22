@@ -37,6 +37,8 @@ const Login = () => {
 
   return (
     <div className='formContainer'>
+      <h2>Login</h2>
+      <p>The perfect solution to your lost family cookbook</p>
       <form onSubmit={handleSubmit} >
 
         <input
