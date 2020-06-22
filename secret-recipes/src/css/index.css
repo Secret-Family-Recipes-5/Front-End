@@ -198,3 +198,38 @@ nav .createRecipe {
 .category a {
   font-size: 1.6rem;
 }
+.recipeCardContainer {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.recipeCard {
+  width: 23%;
+  margin-bottom: 50px;
+}
+.recipeTitle {
+  font-family: 'Playfair Display';
+  font-size: 6rem;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+.recipeTitle:hover {
+  color: #8B0000;
+  text-decoration: underline;
+}
+.recipeSource {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+.recipeCategory {
+  font-size: 1.6rem;
+  padding: 9px 15px;
+  background: white;
+  border: 1px solid #EEEEEE;
+  display: inline-block;
+  border-radius: 5px;
+}

@@ -46,7 +46,7 @@ const Register = () => {
             <input
               type='text'
               name='username'
-              placeholder='Username'
+              placeholder='*Username'
               value={formValues.username}
               onChange={handleInput}
             />
@@ -54,7 +54,7 @@ const Register = () => {
             <input
               type='password'
               name='password'
-              placeholder='Password'
+              placeholder='*Password'
               value={formValues.password}
               onChange={handleInput}
             />
