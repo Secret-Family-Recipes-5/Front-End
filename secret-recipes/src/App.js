@@ -4,7 +4,7 @@ import Nav from './components/Nav';
 import Login from './components/Login';
 import Home from './components/Home';
 import Register from './components/Register';
-import './App.css';
+import '../src/css/index.css';
 
 function App() {
   return (
