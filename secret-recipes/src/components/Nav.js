@@ -11,7 +11,7 @@ const Nav = () => {
           <Link to='/'>Secret Family Recipes Cookbook</Link>
         </div>
         <nav>
-          <Link to='/'>Home</Link>
+          <Link to='/Home'>Home</Link>
           <Link className='createRecipe' to='/'>Create Recipe</Link>
         </nav>
       </div>

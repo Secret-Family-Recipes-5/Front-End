@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import formValidation from './formValidation'
+import * as Yup from 'yup'
 // import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 // import { useHistory } from 'react-router-dom';
 
@@ -10,10 +12,35 @@ const Register = () => {
       password: '',
     }
 
+    const initialFormErrors = {
+      username: '',
+      password: '',
+    }
+
+    const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [formValues, setFormValues] = useState(initialFormValues);
 
     const handleInput = (event) => {
       const { name, value } = event.target
+
+      Yup
+      .reach(formValidation, name)
+      .validate(value)
+
+
+      .then(() => {
+        setFormErrors({
+          ...formErrors,
+          [name]: ''
+        })
+      })
+
+      .catch(error => {
+        setFormErrors({
+          ...formErrors,
+          [name]: error.errors[0]
+        });
+      });
 
       setFormValues({
         ...formValues,
@@ -42,6 +69,11 @@ const Register = () => {
           <p className='formDesc'>The perfect solution to your lost family cookbook</p>
 
           <form onSubmit={handleSubmit} >
+
+            <div className='formErrors'>
+              <p>{formErrors.username}</p>
+              <p>{formErrors.password}</p>
+            </div>
 
             <input
               type='text'
