@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
+  let history = useHistory();
 
   const initialFormValues = {
     username: '',
@@ -22,6 +25,14 @@ const Login = () => {
     event.preventDefault()
 
     // Axios PUT
+  //   axiosWithAuth()
+  //   .put('/api/login', formValues)
+  //   .then(res => {
+  //     console.log(res)
+  //     // window.localStorage.setItem('token', res.data.payload)
+  //     // history.push('/home')
+  //   })
+  //   .catch(err => console.log(err))
   }
 
   return (
