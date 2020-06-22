@@ -9,10 +9,9 @@ function App() {
 
       <Login />
 
-
       <Switch>
 
-        <Route path='/profile'>
+        <Route path='/home'>
 
         </Route>
         <Route path='/register'>
