@@ -9,11 +9,13 @@ const Register = () => {
 
     const initialFormValues = {
       username: '',
+      email: '',
       password: '',
     }
 
     const initialFormErrors = {
       username: '',
+      email: '',
       password: '',
     }
 
@@ -83,6 +85,19 @@ const Register = () => {
             />
             <div className='formErrors'>
               <p>{formErrors.username}</p>
+            </div>
+
+            <label htmlFor='username'>Email</label>
+            <input
+              type='text'
+              name='email'
+              placeholder='johndoe@example.com'
+              id='email'
+              value={formValues.email}
+              onChange={handleInput}
+            />
+            <div className='formErrors'>
+              <p>{formErrors.email}</p>
             </div>
 
             <label htmlFor='password'>Password</label>
