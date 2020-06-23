@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
-import formValidation from './formValidation'
-import * as Yup from 'yup'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import formValidation from './formValidation';
+import * as Yup from 'yup';
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
 
@@ -9,12 +10,12 @@ const Login = () => {
 
   const initialFormValues = {
     "username": "",
-    "password": ""
+    "password": "",
   }
 
   const initialFormErrors = {
     "username": "",
-    "password": ""
+    "password": "",
   }
 
   const [formErrors, setFormErrors] = useState(initialFormErrors);
@@ -84,19 +85,6 @@ const Login = () => {
             <p>{formErrors.username}</p>
           </div>
 
-          {/* <label htmlFor='primaryemail'>Email:</label>
-            <input
-              type='text'
-              name='primaryemail'
-              placeholder='johndoe@example.com'
-              id='primaryemail'
-              value={formValues.primaryemail}
-              onChange={handleInput}
-            /> */}
-            <div className='formErrors'>
-              <p>{formErrors.primaryemail}</p>
-            </div>
-
           <label htmlFor='password'>Password:</label>
           <input
             type='password'
@@ -111,6 +99,8 @@ const Login = () => {
           </div>
 
           <button>Login</button>
+
+          <p class='authLink'>Don't have an account &mdash; <Link to='/register'>Sign up</Link></p>
 
         </form>
       </div>
