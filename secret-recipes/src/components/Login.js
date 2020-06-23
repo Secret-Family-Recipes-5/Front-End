@@ -9,14 +9,12 @@ const Login = () => {
 
   const initialFormValues = {
     "username": "",
-    "password": "",
-    "primaryemail": ""
+    "password": ""
   }
 
   const initialFormErrors = {
     "username": "",
-    "password": "",
-    "primaryemail": ""
+    "password": ""
   }
 
   const [formErrors, setFormErrors] = useState(initialFormErrors);
@@ -86,7 +84,7 @@ const Login = () => {
             <p>{formErrors.username}</p>
           </div>
 
-          <label htmlFor='primaryemail'>Email:</label>
+          {/* <label htmlFor='primaryemail'>Email:</label>
             <input
               type='text'
               name='primaryemail'
@@ -94,7 +92,7 @@ const Login = () => {
               id='primaryemail'
               value={formValues.primaryemail}
               onChange={handleInput}
-            />
+            /> */}
             <div className='formErrors'>
               <p>{formErrors.primaryemail}</p>
             </div>
