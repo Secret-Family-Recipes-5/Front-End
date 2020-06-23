@@ -9,11 +9,13 @@ const Login = () => {
 
   const initialFormValues = {
     username: '',
+    email: '',
     password: '',
   }
 
   const initialFormErrors = {
     username: '',
+    email: '',
     password: '',
   }
 
