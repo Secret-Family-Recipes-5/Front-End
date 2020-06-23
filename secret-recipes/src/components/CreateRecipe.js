@@ -25,7 +25,7 @@ const CreateRecipe = () => {
           placeholder='Aunt Patty'
         />
 
-        <button>Create Recipe</button>
+        <button className=''>Create Recipe</button>
 
       </form>
     </div>

@@ -149,7 +149,8 @@ label {
   margin: 5px 0;
   display: inline-block;
 }
-input,
+input[type=text],
+input[type=password],
 button {
   padding: 15px 20px;
   border: 1px solid #DDDDDD;
@@ -161,8 +162,10 @@ button {
   font-size: 1.6rem;
   box-shadow: 0px 0.5px 0px 0px rgba(0, 0, 0, 0.1);
 }
-input:focus {
+input[type=text]:focus,
+input[type=password]:focus {
   box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid #CCCCCC;
 }
 button {
   margin-top: 20px;
@@ -188,6 +191,10 @@ button:hover:before {
 ::placeholder {
   font-size: 1.6rem;
   font-family: 'Source Sans Pro', sans-serif;
+}
+.termsOfService {
+  font-size: 1.4rem;
+  line-height: 1.5;
 }
 .formErrors p {
   font-size: 1.6rem;
