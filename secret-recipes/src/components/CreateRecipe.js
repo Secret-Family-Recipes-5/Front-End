@@ -37,7 +37,7 @@ const CreateRecipe = () => {
 
   return (
     <div className='createRecipeContainer'>
-      <h2 className='createRecipeTitle'>&mdash; Create Recipe</h2>
+      <h2 className='createRecipeTitle'>&mdash; Create a Recipe</h2>
 
       <hr />
 
