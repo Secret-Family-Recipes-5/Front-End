@@ -17,9 +17,9 @@ function App() {
 
           {/* <PrivateRoute exact path='/home' component={Home} /> */}
 
-        <Route exact path='/create' component={CreateRecipe} />
+          <Route exact path='/create' component={CreateRecipe} />
 
-        <Route exact path='/home' component={Home} />
+          <Route exact path='/home' component={Home} />
 
           <Route exact path='/register' component={Register} />
 

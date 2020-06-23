@@ -54,10 +54,10 @@ const Login = () => {
     event.preventDefault()
 
     axiosWithAuth()
-    .post('/login', formValues)
+    .post('/login', `grant_type=password&username=${formValues.username}&password=${formValues.password}`,)
     .then(res => {
       console.log(res)
-      localStorage.setItem('token', res.data.token)
+      localStorage.setItem('token', res.data.access_token);
       history.push('/home')
     })
     .catch(err => console.log(err))
