@@ -109,7 +109,7 @@ const Register = () => {
             onChange={handleInput}
           />
           <div className='formErrors'>
-            <p>{formErrors.primaryemail}</p>
+            <p>{formErrors.password}</p>
           </div>
 
           <button>Sign up</button>
