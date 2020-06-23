@@ -8,15 +8,15 @@ const Login = () => {
   let history = useHistory();
 
   const initialFormValues = {
-    username: '',
-    email: '',
-    password: '',
+    "username": "",
+    "password": "",
+    "primaryemail": ""
   }
 
   const initialFormErrors = {
-    username: '',
-    email: '',
-    password: '',
+    "username": "",
+    "password": "",
+    "primaryemail": ""
   }
 
   const [formErrors, setFormErrors] = useState(initialFormErrors);
@@ -86,17 +86,17 @@ const Login = () => {
             <p>{formErrors.username}</p>
           </div>
 
-          <label htmlFor='username'>Email:</label>
+          <label htmlFor='primaryemail'>Email:</label>
             <input
               type='text'
-              name='email'
+              name='primaryemail'
               placeholder='johndoe@example.com'
-              id='email'
-              value={formValues.email}
+              id='primaryemail'
+              value={formValues.primaryemail}
               onChange={handleInput}
             />
             <div className='formErrors'>
-              <p>{formErrors.email}</p>
+              <p>{formErrors.primaryemail}</p>
             </div>
 
           <label htmlFor='password'>Password:</label>
