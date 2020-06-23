@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import formValidation from './formValidation'
 import * as Yup from 'yup'
-// import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
-// import { useHistory } from 'react-router-dom';
+import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
-  // let history = useHistory();
+  let history = useHistory();
 
   const initialFormValues = {
     "username": "",
@@ -53,15 +53,14 @@ const Login = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    // Axios PUT
-  //   axiosWithAuth()
-  //   .put('/api/login', formValues)
-  //   .then(res => {
-  //     console.log(res)
-  //     // window.localStorage.setItem('token', res.data.payload)
-  //     // history.push('/home')
-  //   })
-  //   .catch(err => console.log(err))
+    axiosWithAuth()
+    .post('/login', `grant_type=password&username=${formValues.username}&password=${formValues.password}`,)
+    .then(res => {
+      console.log(res)
+      localStorage.setItem('token', res.data.access_token);
+      history.push('/home')
+    })
+    .catch(err => console.log(err))
   }
 
   return (

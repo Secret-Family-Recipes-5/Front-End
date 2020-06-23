@@ -6,24 +6,27 @@ import Home from './components/Home';
 import Register from './components/Register';
 import CreateRecipe from './components/CreateRecipe';
 import '../src/css/index.css';
+import RootContext from './contexts/RootContext';
 
 function App() {
   return (
     <div className="App">
-      <Nav />
-      <Switch>
+      <RootContext.Provider>
+        <Nav />
+        <Switch>
 
-        {/* <PrivateRoute exact path='/home' component={Home} /> */}
+          {/* <PrivateRoute exact path='/home' component={Home} /> */}
 
-        <Route exact path='/create' component={CreateRecipe} />
+          <Route exact path='/create' component={CreateRecipe} />
 
-        <Route exact path='/home' component={Home} />
+          <Route exact path='/home' component={Home} />
 
-        <Route exact path='/register' component={Register} />
+          <Route exact path='/register' component={Register} />
 
-        <Route exact path='/' component={Login} />
+          <Route exact path='/' component={Login} />
 
-      </Switch>
+        </Switch>
+      </RootContext.Provider>
     </div>
   );
 }
