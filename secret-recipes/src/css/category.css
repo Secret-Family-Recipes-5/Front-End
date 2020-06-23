@@ -1,0 +1,15 @@
+.categoryWrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 20px;
+}
+.category {
+  padding: 9px 14px;
+  border: 1px solid #EEEEEE;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+.category a {
+  font-size: 1.6rem;
+}

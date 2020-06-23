@@ -1,12 +1,9 @@
-// Form container
-
 .formContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-top: 100px;
 }
-
 .formWrapper {
   width: 450px;
   background: white;
@@ -14,41 +11,31 @@
   padding: 50px 40px;
   border-radius: 8px;
 }
-
-// Form title
-
 h2.formTitle {
   font-size: 4rem;
   font-family: 'Playfair Display';
   margin-bottom: 15px;
   font-weight: 500;
 }
-
-// Form description
-
 p.formDesc {
   font-size: 2rem;
   line-height: 1.4;
   font-family: 'Source Sans Pro', sans-serif;
   margin-bottom: 20px;
 }
-
-// Form inputs
-
 hr {
   height: 1px;
   background: #EEEEEE;
   border: none;
   margin-bottom: 30px;
 }
-
 label {
   font-size: 1.6rem;
   margin: 5px 0;
   display: inline-block;
 }
-
-input, button {
+input,
+button {
   padding: 15px 20px;
   border: 1px solid #DDDDDD;
   display: flex;
@@ -57,13 +44,11 @@ input, button {
   margin-bottom: 10px;
   border-radius: 6px;
   font-size: 1.6rem;
-  box-shadow: 0px .5px 0px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 0.5px 0px 0px rgba(0, 0, 0, 0.1);
 }
-
 input:focus {
-  box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
 }
-
 button {
   margin-top: 20px;
   cursor: pointer;
@@ -73,28 +58,22 @@ button {
   color: white;
   font-size: 1.6rem;
   position: relative;
-
-  &:before {
-    content: '\2192';
-    position: absolute;
-    right: 40px;
-    opacity: 0;
-    transition: all .2s ease;
-  }
 }
-
+button:before {
+  content: '\2192';
+  position: absolute;
+  right: 40px;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
 button:hover:before {
   right: 30px;
   opacity: 1;
 }
-
 ::placeholder {
   font-size: 1.6rem;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
-// Yup from validations for Login & Register
-
 .formErrors p {
   font-size: 1.6rem;
   margin: 10px 0;

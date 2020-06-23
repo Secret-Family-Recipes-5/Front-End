@@ -9,11 +9,13 @@ const Login = () => {
 
   const initialFormValues = {
     username: '',
+    email: '',
     password: '',
   }
 
   const initialFormErrors = {
     username: '',
+    email: '',
     password: '',
   }
 
@@ -64,7 +66,7 @@ const Login = () => {
   return (
     <div className='formContainer'>
       <div className='formWrapper'>
-        <h2 className='formTitle'>Login</h2>
+        <h2 className='formTitle'>&mdash; Login</h2>
         <p className='formDesc'>The perfect solution to your lost family cookbook</p>
 
         <hr />
@@ -83,6 +85,19 @@ const Login = () => {
           <div className='formErrors'>
             <p>{formErrors.username}</p>
           </div>
+
+          <label htmlFor='username'>Email</label>
+            <input
+              type='text'
+              name='email'
+              placeholder='johndoe@example.com'
+              id='email'
+              value={formValues.email}
+              onChange={handleInput}
+            />
+            <div className='formErrors'>
+              <p>{formErrors.email}</p>
+            </div>
 
           <label htmlFor='password'>Password</label>
           <input
