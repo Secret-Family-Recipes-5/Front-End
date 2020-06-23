@@ -53,13 +53,13 @@ const Login = () => {
     event.preventDefault()
 
     axiosWithAuth()
-    .post('/login', `grant_type=password&username=${formValues.username}&password=${formValues.password}`,)
-    .then(res => {
-      console.log(res)
-      localStorage.setItem('token', res.data.access_token);
-      history.push('/home')
-    })
-    .catch(err => console.log(err))
+      .post('/login', `grant_type=password&username=${formValues.username}&password=${formValues.password}`,)
+      .then(res => {
+        console.log(res)
+        localStorage.setItem('token', res.data.access_token);
+        history.push('/home')
+      })
+      .catch(err => console.log(err))
   }
 
   return (
