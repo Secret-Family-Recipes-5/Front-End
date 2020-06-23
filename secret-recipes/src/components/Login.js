@@ -9,12 +9,12 @@ const Login = () => {
 
   const initialFormValues = {
     "username": "",
-    "password": ""
+    "password": "",
   }
 
   const initialFormErrors = {
     "username": "",
-    "password": ""
+    "password": "",
   }
 
   const [formErrors, setFormErrors] = useState(initialFormErrors);
@@ -52,13 +52,13 @@ const Login = () => {
     event.preventDefault()
 
     axiosWithAuth()
-    .post('/login', `grant_type=password&username=${formValues.username}&password=${formValues.password}`,)
-    .then(res => {
-      console.log(res)
-      localStorage.setItem('token', res.data.access_token);
-      history.push('/home')
-    })
-    .catch(err => console.log(err))
+      .post('/login', `grant_type=password&username=${formValues.username}&password=${formValues.password}`,)
+      .then(res => {
+        console.log(res)
+        localStorage.setItem('token', res.data.access_token);
+        history.push('/home')
+      })
+      .catch(err => console.log(err))
   }
 
   return (
@@ -84,18 +84,9 @@ const Login = () => {
             <p>{formErrors.username}</p>
           </div>
 
-          {/* <label htmlFor='primaryemail'>Email:</label>
-            <input
-              type='text'
-              name='primaryemail'
-              placeholder='johndoe@example.com'
-              id='primaryemail'
-              value={formValues.primaryemail}
-              onChange={handleInput}
-            /> */}
-            <div className='formErrors'>
-              <p>{formErrors.primaryemail}</p>
-            </div>
+          <div className='formErrors'>
+            <p>{formErrors.primaryemail}</p>
+          </div>
 
           <label htmlFor='password'>Password:</label>
           <input
