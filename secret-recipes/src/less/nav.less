@@ -6,20 +6,30 @@
 .navWrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 80%;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 30px 0 20px 0;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
 }
 
 .logo a {
   color: #111111;
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
+  line-height: 1.1;
   font-weight: 500;
+  margin-right: 20px;
 }
 
-nav {
-
+.logo input {
+  padding: 9px 14px;
+  font-size: 1.6rem;
+  border: 1px solid #DDDDDD;
 }
 
 nav a {
@@ -29,8 +39,11 @@ nav a {
 }
 
 nav .createRecipe {
-  background: #8B0000;
-  border-radius: 5px;
-  padding: 9px 14px;
+  background: #b90808;
+  border: 1px solid #8B0000;
+  box-shadow: 0px .5px 0px 0px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  padding: 8px 14px;
   color: white;
+  font-size: 1.6rem;
 }

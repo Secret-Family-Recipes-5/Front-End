@@ -68,28 +68,35 @@ const Register = () => {
           <h2 className='formTitle'>Register</h2>
           <p className='formDesc'>The perfect solution to your lost family cookbook</p>
 
+          <hr />
+
           <form onSubmit={handleSubmit} >
 
-            <div className='formErrors'>
-              <p>{formErrors.username}</p>
-              <p>{formErrors.password}</p>
-            </div>
-
+            <label htmlFor='username'>Username</label>
             <input
               type='text'
               name='username'
-              placeholder='*Username'
+              placeholder='johndoe'
+              id='username'
               value={formValues.username}
               onChange={handleInput}
             />
+            <div className='formErrors'>
+              <p>{formErrors.username}</p>
+            </div>
 
+            <label htmlFor='password'>Password</label>
             <input
               type='password'
               name='password'
-              placeholder='*Password'
+              placeholder='**********'
+              id='password'
               value={formValues.password}
               onChange={handleInput}
             />
+            <div className='formErrors'>
+              <p>{formErrors.password}</p>
+            </div>
 
             <button>Sign up</button>
           </form>

@@ -68,27 +68,35 @@ const Login = () => {
         <h2 className='formTitle'>Login</h2>
         <p className='formDesc'>The perfect solution to your lost family cookbook</p>
 
-        <form onSubmit={handleSubmit} >
-          <div className='formErrors'>
-            <p>{formErrors.username}</p>
-            <p>{formErrors.password}</p>
-          </div>
+        <hr />
 
+        <form onSubmit={handleSubmit} >
+
+          <label htmlFor='username'>Username</label>
           <input
             type='text'
             name='username'
-            placeholder='Username'
+            placeholder='johndoe'
+            id='username'
             value={formValues.username}
             onChange={handleInput}
           />
+          <div className='formErrors'>
+            <p>{formErrors.username}</p>
+          </div>
 
+          <label htmlFor='password'>Password</label>
           <input
             type='password'
             name='password'
-            placeholder='Password'
+            placeholder='**********'
+            id='password'
             value={formValues.password}
             onChange={handleInput}
           />
+          <div className='formErrors'>
+            <p>{formErrors.password}</p>
+          </div>
 
           <button>Login</button>
         </form>

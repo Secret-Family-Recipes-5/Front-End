@@ -5,16 +5,16 @@ const Category = (props) => {
   return (
     <>
       <div className='category'>
-        <a>Dinner</a>
+        <a>#dinner</a>
       </div>
       <div className='category'>
-        <a>Chicken</a>
+        <a>#chicken</a>
       </div>
       <div className='category'>
-        <a>Pasta</a>
+        <a>#pasta</a>
       </div>
       <div className='category'>
-        <a>Dessert</a>
+        <a>#dessert</a>
       </div>
     </>
   );

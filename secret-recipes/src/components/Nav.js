@@ -9,6 +9,7 @@ const Nav = () => {
       <div className='navWrapper'>
         <div className='logo'>
           <Link to='/'>Secret Family Recipes Cookbook</Link>
+          <input type='text' placeholder='Search recipes...'></input>
         </div>
         <nav>
           <Link to='/Home'>Home</Link>
