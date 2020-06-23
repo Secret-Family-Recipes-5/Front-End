@@ -100,7 +100,7 @@ const Login = () => {
 
           <button>Login</button>
 
-          <p class='authLink'>Don't have an account &mdash; <Link to='/register'>Sign up</Link></p>
+          <p className='authLink'>Don't have an account &mdash; <Link to='/register'>Sign up</Link></p>
 
         </form>
       </div>

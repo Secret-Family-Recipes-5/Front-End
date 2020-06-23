@@ -1,36 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-
-const RecipeCard = () => {
+const RecipeCard = ({ recipe }) => {
   return (
     <>
       <div className='recipeCard'>
-        <h2 className='recipeTitle'>Banana Bread</h2>
-        <p className='recipeSource'>Grandma Patty</p>
-        <a className='recipeCategory'>#bread</a>
-        <a className='recipeCategory'>#breakfast</a>
-      </div>
-      <div className='recipeCard'>
-        <h2 className='recipeTitle'>Southern-Style Egg Salad</h2>
-        <p className='recipeSource'>Sam Dors</p>
-        <a className='recipeCategory'>#salad</a>
-        <a className='recipeCategory'>#eggs</a>
-        <a className='recipeCategory'>#southern</a>
-      </div>
-      <div className='recipeCard'>
-        <h2 className='recipeTitle'>Egg Muffin</h2>
-        <p className='recipeSource'>Aunt Patty</p>
-        <a className='recipeCategory'>#eggs</a>
-        <a className='recipeCategory'>#bread</a>
-        <a className='recipeCategory'>#breakfast</a>
-      </div>
-      <div className='recipeCard'>
-        <h2 className='recipeTitle'>French Onion-Breaded Baked Chicken</h2>
-        <p className='recipeSource'>Grandma Patty</p>
-        <a className='recipeCategory'>#chicken</a>
-        <a className='recipeCategory'>#onion</a>
-        <a className='recipeCategory'>#french</a>
-        <a className='recipeCategory'>#breakfast</a>
+        <Link to={`/recipe/${recipe.id}`}>
+          <h2 className='recipeTitle'>{recipe.title}</h2>
+        </Link>
+        <p className='recipeSource'>{recipe.source}</p>
+        <a className='recipeCategory'>#{recipe.category}</a>
       </div>
     </>
   );

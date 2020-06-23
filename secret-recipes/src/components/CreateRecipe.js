@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import RootContext from '../contexts/RootContext';
 
 const initialFormValues = {
   "title": "",
@@ -11,7 +12,7 @@ const initialFormValues = {
 }
 
 const CreateRecipe = () => {
-
+  const { addDummy } = useContext(RootContext);
   let history = useHistory();
   const [formValues, setFormValues] = useState(initialFormValues);
 
@@ -26,13 +27,15 @@ const CreateRecipe = () => {
 
   const submitHandler = event => {
     event.preventDefault()
-    axios
-      .post('/recipes/recipe/', formValues)
-      .then(res => {
-        console.log(res)
-        history.push('/home')
-      })
-      .catch(err => console.log(err))
+    addDummy(formValues);
+    history.push('/home');
+    // axios
+    //   .post('/recipes/recipe/', formValues)
+    //   .then(res => {
+    //     console.log(res)
+    //     history.push('/home')
+    //   })
+    //   .catch(err => console.log(err))
   }
 
   return (

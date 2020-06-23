@@ -1,12 +1,13 @@
-import React from 'react'
-import RecipeCard from './RecipeCard'
+import React, { useContext } from 'react';
+import RecipeCard from './RecipeCard';
+import RootContext from '../contexts/RootContext';
 
 const Home = () => {
-
+  const { recipes } = useContext(RootContext);
   return (
 
     <div className='recipeCardContainer'>
-      <RecipeCard />
+      {recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)}
     </div>
   );
 }
