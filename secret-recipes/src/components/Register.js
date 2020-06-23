@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import formValidation from './formValidation'
 import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom';
@@ -85,7 +86,7 @@ const Register = () => {
             <p>{formErrors.username}</p>
           </div>
 
-          <label htmlFor='username'>Email</label>
+          <label htmlFor='primaryemail'>Email</label>
           <input
             type='text'
             name='primaryemail'
@@ -95,7 +96,7 @@ const Register = () => {
             onChange={handleInput}
           />
           <div className='formErrors'>
-            <p>{formErrors.email}</p>
+            <p>{formErrors.primaryemail}</p>
           </div>
 
           <label htmlFor='password'>Password</label>
@@ -112,6 +113,8 @@ const Register = () => {
           </div>
 
           <button>Sign up</button>
+
+          <p class='authLink'>Already have an account &mdash; <Link to='/'>Log in</Link></p>
         </form>
       </div>
     </div>

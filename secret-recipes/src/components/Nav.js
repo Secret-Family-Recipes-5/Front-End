@@ -13,16 +13,17 @@ const Nav = () => {
           <input type='text' placeholder='Search recipes...'></input>
         </div>
         <nav>
+
           <Link to='/home'>Home</Link>
           <Link className='createRecipe' to='/create'>New Recipe</Link>
         </nav>
       </div>
 
-      {token ? 
+      {token ?
       <div className='categoryWrapper'>
         <Category />
-      </div> 
-      : 
+      </div>
+      :
       null
       }
 
