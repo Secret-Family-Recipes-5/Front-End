@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import formValidation from './formValidation'
 import * as Yup from 'yup'
-// import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
-// import { useHistory } from 'react-router-dom';
+import axios from 'axios'
+import { useHistory } from 'react-router-dom';
+
 
 const Register = () => {
-    // let history = useHistory();
+    let history = useHistory();
 
     const initialFormValues = {
       username: '',
       password: '',
+      primaryemail: 'testing@testing.com'
     }
 
     const initialFormErrors = {
@@ -51,15 +53,19 @@ const Register = () => {
     const handleSubmit = (event) => {
       event.preventDefault()
 
-      // Axios PUT
-    //   axiosWithAuth()
-    //   .put('/api/register', formValues)
-    //   .then(res => {
-    //     console.log(res)
-    //     // window.localStorage.setItem('token', res.data.payload)
-    //     // history.push('/')
-    //   })
-    //   .catch(err => console.log(err))
+      axios
+      .create({
+        headers: {
+          Authorization: `Basic ${btoa('lambda-client:lambda-secret')}`,
+          'Content-Type': 'application/x-www-form-urlencoded'
+         }
+      })
+      .post('https://secret-recipe-5.herokuapp.com/users/createnewuser', formValues)
+      .then(res => {
+        console.log(res)
+        history.push('/')
+      })
+      .catch(err => console.log(err))
     }
 
     return (
