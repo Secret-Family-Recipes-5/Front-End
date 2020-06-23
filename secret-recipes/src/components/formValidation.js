@@ -5,7 +5,7 @@ const formValidation = Yup.object().shape({
     .string()
     .min(6, "⚠️ Username must be at least 6 characters long.")
     .required("Username is Required"),
-  email: Yup
+  primaryemail: Yup
     .string()
     .email('🤔 Please provide a valid email address')
     .required("⚠️ Email is Required"),

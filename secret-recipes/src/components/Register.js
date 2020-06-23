@@ -8,15 +8,15 @@ const Register = () => {
     // let history = useHistory();
 
     const initialFormValues = {
-      username: '',
-      email: '',
-      password: '',
+      "username": "",
+      "password": "",
+      "primaryemail": ""
     }
 
     const initialFormErrors = {
-      username: '',
-      email: '',
-      password: '',
+      "username": "",
+      "password": "",
+      "primaryemail": ""
     }
 
     const [formErrors, setFormErrors] = useState(initialFormErrors);
@@ -93,7 +93,7 @@ const Register = () => {
               name='email'
               placeholder='johndoe@example.com'
               id='email'
-              value={formValues.email}
+              value={formValues.primaryemail}
               onChange={handleInput}
             />
             <div className='formErrors'>
