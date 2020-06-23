@@ -13,7 +13,7 @@ const Nav = () => {
         </div>
         <nav>
           <Link to='/Home'>Home</Link>
-          <Link className='createRecipe' to='/create'>Create Recipe</Link>
+          <Link className='createRecipe' to='/create'>New Recipe</Link>
         </nav>
       </div>
 

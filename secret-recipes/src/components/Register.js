@@ -74,7 +74,7 @@ const Register = () => {
 
           <form onSubmit={handleSubmit} >
 
-            <label htmlFor='username'>Username</label>
+            <label htmlFor='username'>Username:</label>
             <input
               type='text'
               name='username'
@@ -87,7 +87,7 @@ const Register = () => {
               <p>{formErrors.username}</p>
             </div>
 
-            <label htmlFor='username'>Email</label>
+            <label htmlFor='username'>Email:</label>
             <input
               type='text'
               name='email'
@@ -100,7 +100,7 @@ const Register = () => {
               <p>{formErrors.email}</p>
             </div>
 
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'>Password:</label>
             <input
               type='password'
               name='password'
@@ -114,6 +114,8 @@ const Register = () => {
             </div>
 
             <button>Sign up</button>
+
+            <p className='termsOfService'>By signing up, you agree to CodePen's Terms of Service , Code of Conduct , and Privacy Policy .</p>
           </form>
         </div>
       </div>

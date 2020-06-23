@@ -74,7 +74,7 @@ const Login = () => {
 
         <form onSubmit={handleSubmit} >
 
-          <label htmlFor='username'>Username</label>
+          <label htmlFor='username'>Username:</label>
           <input
             type='text'
             name='username'
@@ -87,7 +87,7 @@ const Login = () => {
             <p>{formErrors.username}</p>
           </div>
 
-          <label htmlFor='username'>Email</label>
+          <label htmlFor='username'>Email:</label>
             <input
               type='text'
               name='email'
@@ -100,7 +100,7 @@ const Login = () => {
               <p>{formErrors.email}</p>
             </div>
 
-          <label htmlFor='password'>Password</label>
+          <label htmlFor='password'>Password:</label>
           <input
             type='password'
             name='password'
@@ -114,6 +114,7 @@ const Login = () => {
           </div>
 
           <button>Login</button>
+
         </form>
       </div>
     </div>
