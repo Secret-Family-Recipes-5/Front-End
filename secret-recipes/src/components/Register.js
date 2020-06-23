@@ -89,7 +89,7 @@ const Register = () => {
             <input
               type='text'
               name='primaryemail'
-              placeholder='johndoe@example.com'
+              placeholder='john@doe.com'
               id='primaryemail'
               value={formValues.primaryemail}
               onChange={handleInput}
@@ -113,7 +113,7 @@ const Register = () => {
 
             <button>Sign up</button>
 
-            <p className='termsOfService'>By signing up, you agree to CodePen's Terms of Service , Code of Conduct , and Privacy Policy .</p>
+            <p className='termsOfService'>By signing up, you agree to the Terms of Service , Code of Conduct , and Privacy Policy .</p>
           </form>
         </div>
 
