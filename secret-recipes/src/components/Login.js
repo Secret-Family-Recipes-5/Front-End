@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import formValidation from './formValidation'
+import * as Yup from 'yup'
 // import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 // import { useHistory } from 'react-router-dom';
 
@@ -10,10 +12,35 @@ const Login = () => {
     password: '',
   }
 
+  const initialFormErrors = {
+    username: '',
+    password: '',
+  }
+
+  const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [formValues, setFormValues] = useState(initialFormValues);
 
   const handleInput = (event) => {
     const { name, value } = event.target
+
+    Yup
+      .reach(formValidation, name)
+      .validate(value)
+
+
+      .then(() => {
+        setFormErrors({
+          ...formErrors,
+          [name]: ''
+        })
+      })
+
+      .catch(error => {
+        setFormErrors({
+          ...formErrors,
+          [name]: error.errors[0]
+        });
+      });
 
     setFormValues({
       ...formValues,
@@ -41,23 +68,35 @@ const Login = () => {
         <h2 className='formTitle'>Login</h2>
         <p className='formDesc'>The perfect solution to your lost family cookbook</p>
 
+        <hr />
+
         <form onSubmit={handleSubmit} >
 
+          <label htmlFor='username'>Username</label>
           <input
             type='text'
             name='username'
-            placeholder='Username'
+            placeholder='johndoe'
+            id='username'
             value={formValues.username}
             onChange={handleInput}
           />
+          <div className='formErrors'>
+            <p>{formErrors.username}</p>
+          </div>
 
+          <label htmlFor='password'>Password</label>
           <input
             type='password'
             name='password'
-            placeholder='Password'
+            placeholder='**********'
+            id='password'
             value={formValues.password}
             onChange={handleInput}
           />
+          <div className='formErrors'>
+            <p>{formErrors.password}</p>
+          </div>
 
           <button>Login</button>
         </form>
