@@ -7,19 +7,19 @@ import Register from './components/Register';
 import CreateRecipe from './components/CreateRecipe';
 import '../src/css/index.css';
 import RootContext from './contexts/RootContext';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
+
   return (
     <div className="App">
       <RootContext.Provider>
         <Nav />
         <Switch>
 
-          {/* <PrivateRoute exact path='/home' component={Home} /> */}
+          <PrivateRoute exact path='/home' component={Home} />
 
-          <Route exact path='/create' component={CreateRecipe} />
-
-          <Route exact path='/home' component={Home} />
+          <PrivateRoute exact path='/create' component={CreateRecipe} />
 
           <Route exact path='/register' component={Register} />
 
