@@ -86,12 +86,12 @@ const Login = () => {
             <p>{formErrors.username}</p>
           </div>
 
-          <label htmlFor='username'>Email:</label>
+          <label htmlFor='primaryemail'>Email:</label>
             <input
               type='text'
-              name='email'
+              name='primaryemail'
               placeholder='johndoe@example.com'
-              id='email'
+              id='primaryemail'
               value={formValues.primaryemail}
               onChange={handleInput}
             />

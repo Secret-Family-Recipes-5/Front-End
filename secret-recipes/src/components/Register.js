@@ -12,13 +12,13 @@ const Register = () => {
     const initialFormValues = {
       "username": "",
       "password": "",
-      "primaryemail": ""
+      "primaryemail": "",
     }
 
     const initialFormErrors = {
       "username": "",
       "password": "",
-      "primaryemail": ""
+      "primaryemail": "",
     }
 
   const [formErrors, setFormErrors] = useState(initialFormErrors);
@@ -60,21 +60,6 @@ const Register = () => {
         console.log(res)
         history.push('/')
       })
-<<<<<<< HEAD
-    }
-
-    const handleSubmit = (event) => {
-      event.preventDefault()
-
-      // Axios PUT
-    //   axiosWithAuth()
-    //   .put('/api/register', formValues)
-    //   .then(res => {
-    //     console.log(res)
-    //     // window.localStorage.setItem('token', res.data.payload)
-    //     // history.push('/')
-    //   })
-    //   .catch(err => console.log(err))
     }
 
     return (
@@ -100,17 +85,17 @@ const Register = () => {
               <p>{formErrors.username}</p>
             </div>
 
-            <label htmlFor='username'>Email:</label>
+            <label htmlFor='primaryemail'>Email:</label>
             <input
               type='text'
-              name='email'
+              name='primaryemail'
               placeholder='johndoe@example.com'
-              id='email'
+              id='primaryemail'
               value={formValues.primaryemail}
               onChange={handleInput}
             />
             <div className='formErrors'>
-              <p>{formErrors.email}</p>
+              <p>{formErrors.primaryemail}</p>
             </div>
 
             <label htmlFor='password'>Password:</label>
@@ -131,63 +116,7 @@ const Register = () => {
             <p className='termsOfService'>By signing up, you agree to CodePen's Terms of Service , Code of Conduct , and Privacy Policy .</p>
           </form>
         </div>
-=======
-      .catch(err => console.log(err))
-  }
 
-  return (
-    <div className='formContainer'>
-      <div className='formWrapper'>
-        <h2 className='formTitle'>&mdash; Register</h2>
-        <p className='formDesc'>The perfect solution to your lost family cookbook</p>
-
-        <hr />
-
-        <form onSubmit={handleSubmit} >
-
-          <label htmlFor='username'>Username</label>
-          <input
-            type='text'
-            name='username'
-            placeholder='johndoe'
-            id='username'
-            value={formValues.username}
-            onChange={handleInput}
-          />
-          <div className='formErrors'>
-            <p>{formErrors.username}</p>
-          </div>
-
-          <label htmlFor='username'>Email</label>
-          <input
-            type='text'
-            name='primaryemail'
-            placeholder='johndoe@example.com'
-            id='primaryemail'
-            value={formValues.primaryemail}
-            onChange={handleInput}
-          />
-          <div className='formErrors'>
-            <p>{formErrors.email}</p>
-          </div>
-
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            name='password'
-            placeholder='**********'
-            id='password'
-            value={formValues.password}
-            onChange={handleInput}
-          />
-          <div className='formErrors'>
-            <p>{formErrors.password}</p>
-          </div>
-
-          <button>Sign up</button>
-        </form>
->>>>>>> 1e551961f54e4ccc86ba9f83453cd6e33990f154
-      </div>
     </div>
   );
 }
