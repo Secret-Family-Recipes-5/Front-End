@@ -27,24 +27,24 @@ const Register = () => {
   const handleInput = (event) => {
     const { name, value } = event.target
 
-    // Yup
-    // .reach(formValidation, name)
-    // .validate(value)
+    Yup
+    .reach(formValidation, name)
+    .validate(value)
 
 
-    // .then(() => {
-    //   setFormErrors({
-    //     ...formErrors,
-    //     [name]: ''
-    //   })
-    // })
+    .then(() => {
+      setFormErrors({
+        ...formErrors,
+        [name]: ''
+      })
+    })
 
-    // .catch(error => {
-    //   setFormErrors({
-    //     ...formErrors,
-    //     [name]: error.errors[0]
-    //   });
-    // });
+    .catch(error => {
+      setFormErrors({
+        ...formErrors,
+        [name]: error.errors[0]
+      });
+    });
 
     setFormValues({
       ...formValues,

@@ -7,6 +7,7 @@ const formValidation = Yup.object().shape({
     .required("Username is Required"),
   email: Yup
     .string()
+    .email('🤔 Please provide a valid email address')
     .required("⚠️ Email is Required"),
   password: Yup
     .string()
