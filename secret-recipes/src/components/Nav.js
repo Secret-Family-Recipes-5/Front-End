@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Category from './Category'
 
 const Nav = () => {
+  const token = localStorage.getItem('token')
 
   return (
     <div className='navContainer'>
@@ -17,10 +18,13 @@ const Nav = () => {
         </nav>
       </div>
 
-
+      {token ? 
       <div className='categoryWrapper'>
         <Category />
-      </div>
+      </div> 
+      : 
+      null
+      }
 
     </div>
   );
