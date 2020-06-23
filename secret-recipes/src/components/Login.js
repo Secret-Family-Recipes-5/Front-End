@@ -67,7 +67,7 @@ const Login = () => {
   return (
     <div className='formContainer'>
       <div className='formWrapper'>
-        <h2 className='formTitle'>Login</h2>
+        <h2 className='formTitle'>&mdash; Login</h2>
         <p className='formDesc'>The perfect solution to your lost family cookbook</p>
 
         <hr />

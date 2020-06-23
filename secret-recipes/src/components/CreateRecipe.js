@@ -4,7 +4,7 @@ const CreateRecipe = () => {
 
   return (
     <div className='createRecipeContainer'>
-      <h2 className='createRecipeTitle'>Create Recipe</h2>
+      <h2 className='createRecipeTitle'>&mdash; Create Recipe</h2>
 
       <hr />
 
@@ -24,6 +24,8 @@ const CreateRecipe = () => {
           type='text'
           placeholder='Aunt Patty'
         />
+
+        <button>Create Recipe</button>
 
       </form>
     </div>
