@@ -293,11 +293,10 @@ nav .createRecipe {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin-top: 50px;
 }
 .recipeCard {
-  width: 23%;
+  width: 25%;
   margin-bottom: 50px;
 }
 .recipeTitle {
@@ -313,7 +312,7 @@ nav .createRecipe {
 }
 .recipeSource {
   font-size: 2.2rem;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 .recipeCategory {
   font-size: 1.6rem;

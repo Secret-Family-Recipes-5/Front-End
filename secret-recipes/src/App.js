@@ -16,6 +16,11 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [loginStatus, setLoginStatus] = useState(false)
   const [itemToEdit, setItemToEdit] = useState({})
+  const [searchValues, setSearchValues] = useState('');
+
+  let filteredArray = recipes.filter(recipe => {
+    return recipe.title.toLowerCase().includes(searchValues.toLocaleLowerCase())
+  })
 
   useEffect(() => {
     axios
@@ -30,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <RootContext.Provider value={{recipes, loginStatus, setLoginStatus, itemToEdit, setItemToEdit}}>
+      <RootContext.Provider value={{recipes, loginStatus, setLoginStatus, itemToEdit, setItemToEdit, searchValues, setSearchValues, filteredArray}}>
         <Nav />
         <Switch>
 
