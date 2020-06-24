@@ -1,30 +1,45 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Category from './Category'
+import RootContext from '../contexts/RootContext';
 
 const Nav = () => {
-  const token = localStorage.getItem('token')
+  const { loginStatus, setLoginStatus } = useContext(RootContext);
+
+  const logoutHandler = () => {
+    localStorage.removeItem('token')
+    setLoginStatus(false)
+  }
 
   return (
     <div className='navContainer'>
       <div className='navWrapper'>
         <div className='logo'>
           <Link to='/home'>Secret Family Recipes Cookbook</Link>
-          <input type='text' placeholder='Search recipes...'></input>
+          {loginStatus ? <input type='text' placeholder='Search recipes...'></input> : null}
         </div>
         <nav>
 
-          <Link to='/home'>Home</Link>
-          <Link className='createRecipe' to='/create'>New Recipe</Link>
+          {loginStatus ?
+            <>
+              <Link className='createRecipe' to='/create'>New Recipe</Link>
+              <Link to='/home'>Home</Link>
+              <Link to='/' onClick={logoutHandler}>Logout</Link>
+            </>
+            :
+            <>
+              <Link to='/'>Login</Link> <Link to='/register'>Register</Link>
+            </>
+          }
         </nav>
       </div>
 
-      {token ?
-      <div className='categoryWrapper'>
-        <Category />
-      </div>
-      :
-      null
+      {loginStatus ?
+        <div className='categoryWrapper'>
+          <Category />
+        </div>
+        :
+        null
       }
 
     </div>

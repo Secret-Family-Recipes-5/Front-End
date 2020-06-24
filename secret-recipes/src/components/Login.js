@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import formValidation from './formValidation';
 import * as Yup from 'yup';
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 import { useHistory } from 'react-router-dom';
+import RootContext from '../contexts/RootContext';
 
 const Login = () => {
   let history = useHistory();
+  const { setLoginStatus } = useContext(RootContext);
 
   const initialFormValues = {
     "username": "",
@@ -57,6 +59,7 @@ const Login = () => {
       .then(res => {
         console.log(res)
         localStorage.setItem('token', res.data.access_token);
+        setLoginStatus(true);
         history.push('/home')
       })
       .catch(err => console.log(err))
