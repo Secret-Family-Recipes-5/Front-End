@@ -358,7 +358,7 @@ nav .createRecipe {
   font-size: 1.6rem;
   line-height: 1.5;
   padding: 20px;
-  background: #FEF1E5;
+  background: #fffaf5;
   border: 1px solid #ca8f4c;
   border-radius: 6px;
   color: #ca8f4c;
@@ -366,4 +366,20 @@ nav .createRecipe {
 .recipeInstructions {
   line-height: 1.5;
   font-size: 1.8rem;
+}
+.recipeActions {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.recipeActions button {
+  width: 48%;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  color: #111111;
+}
+.recipeActions .updateBtn {
+  background: #c6fae5;
+  border: 1px solid #1b7545;
+  color: #1b7545;
 }

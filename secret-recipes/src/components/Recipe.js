@@ -40,8 +40,11 @@ const Recipe = () => {
                 <p className='recipeIngredients'>{recipe.ingredients}</p>
                 <br/>
                 <p className='recipeInstructions'>{recipe.instructions}</p>
-                <button onClick={updateHandler} style={{background: 'green'}}>Update</button>
-                <button onClick={deleteHandler}>Delete</button>
+
+                <div className='recipeActions'>
+                    <button onClick={deleteHandler}>Delete</button>
+                    <button onClick={updateHandler} className='updateBtn'>Update</button>
+                </div>
           </div>
         )
     }
