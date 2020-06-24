@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Login from './components/Login';
@@ -8,26 +8,37 @@ import CreateRecipe from './components/CreateRecipe';
 import '../src/css/index.css';
 import RootContext from './contexts/RootContext';
 import PrivateRoute from './components/PrivateRoute';
-import data from './dummydata';
 import Recipe from './components/Recipe';
+import UpdateRecipe from './components/UpdateRecipe';
+import axios from 'axios';
 
 function App() {
-  let [recipes] = useState(data);
+  const [recipes, setRecipes] = useState([]);
   const [loginStatus, setLoginStatus] = useState(false)
+  const [itemToEdit, setItemToEdit] = useState({})
 
-  const addDummy = recipe => {
-    recipes.push(recipe)
-  }
+  useEffect(() => {
+    axios
+    .get(`https://secret-recipe-5.herokuapp.com/recipes/recipes`)
+    .then(res => {
+      setRecipes(res.data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }, [])
 
   return (
     <div className="App">
-      <RootContext.Provider value={{recipes, addDummy, loginStatus, setLoginStatus}}>
+      <RootContext.Provider value={{recipes, loginStatus, setLoginStatus, itemToEdit, setItemToEdit}}>
         <Nav />
         <Switch>
 
           <PrivateRoute exact path='/home' component={Home} />
 
           <PrivateRoute exact path='/create' component={CreateRecipe} />
+
+          <PrivateRoute exact path='/update' component={UpdateRecipe} />
 
           <PrivateRoute exact path='/recipe/:id' component={Recipe} />
 

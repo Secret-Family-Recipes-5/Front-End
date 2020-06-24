@@ -1,10 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Category from './Category'
 import RootContext from '../contexts/RootContext';
 
 const Nav = () => {
   const { loginStatus, setLoginStatus } = useContext(RootContext);
+  useEffect(() => {
+    localStorage.getItem('token') ? setLoginStatus(true) : setLoginStatus(false)
+  }, [setLoginStatus])
 
   const logoutHandler = () => {
     localStorage.removeItem('token')

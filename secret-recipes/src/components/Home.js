@@ -7,7 +7,7 @@ const Home = () => {
   return (
 
     <div className='recipeCardContainer'>
-      {recipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)}
+      {recipes.map(recipe => <RecipeCard key={recipe.recipeid} recipe={recipe} />)}
     </div>
   );
 }
