@@ -39,6 +39,7 @@ const UpdateRecipe = () => {
             .then(res => {
                 console.log(res)
                 history.push(`/recipe/${itemToEdit.recipeid}`)
+                window.location.reload()
             })
             .catch(err => console.log(err))
     }
