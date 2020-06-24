@@ -41,7 +41,7 @@ const Recipe = () => {
                 <p className='recipeInstructions'>{recipe.instructions}</p>
 
                 <div className='recipeActions'>
-                    <button onClick={deleteHandler}>Delete</button>
+                    <button onClick={deleteHandler} className='deleteBtn'>Delete</button>
                     <button onClick={updateHandler} className='updateBtn'>Update</button>
                 </div>
           </div>
