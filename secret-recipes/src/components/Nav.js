@@ -1,10 +1,18 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Category from './Category'
 import RootContext from '../contexts/RootContext';
 
 const Nav = () => {
-  const { loginStatus, setLoginStatus } = useContext(RootContext);
+
+  const { loginStatus, setLoginStatus, setSearchValues } = useContext(RootContext);
+
+  // Search
+  const inputValueHandler = (event) => {
+    setSearchValues(event.target.value);
+  }
+
+
   useEffect(() => {
     localStorage.getItem('token') ? setLoginStatus(true) : setLoginStatus(false)
   }, [setLoginStatus])
@@ -19,7 +27,7 @@ const Nav = () => {
       <div className='navWrapper'>
         <div className='logo'>
           <Link to='/home'>Secret Family Recipes Cookbook</Link>
-          {loginStatus ? <input type='text' placeholder='Search recipes...'></input> : null}
+          {loginStatus ? <input type='text' placeholder='Search recipes...' onChange={inputValueHandler}></input> : null}
         </div>
         <nav>
 

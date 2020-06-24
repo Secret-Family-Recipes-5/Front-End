@@ -3,11 +3,15 @@ import RecipeCard from './RecipeCard';
 import RootContext from '../contexts/RootContext';
 
 const Home = () => {
-  const { recipes } = useContext(RootContext);
+  const { recipes, filteredArray, searchValues } = useContext(RootContext);
+
   return (
 
     <div className='recipeCardContainer'>
-      {recipes.map(recipe => <RecipeCard key={recipe.recipeid} recipe={recipe} />)}
+      {searchValues === ''
+        ? recipes.map(recipe => <RecipeCard key={recipe.recipeid} recipe={recipe} />)
+        : filteredArray.map(recipe => <RecipeCard key={recipe.recipeid} recipe={recipe} />)
+      }
     </div>
   );
 }
