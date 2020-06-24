@@ -296,8 +296,11 @@ nav .createRecipe {
   margin-top: 50px;
 }
 .recipeCard {
-  width: 25%;
-  margin-bottom: 50px;
+  margin: 0 1% 30px 1%;
+  background: white;
+  padding: 50px;
+  border: 1px solid #EEEEEE;
+  border-radius: 6px;
 }
 .recipeTitle {
   font-family: 'Playfair Display';
@@ -312,7 +315,10 @@ nav .createRecipe {
 }
 .recipeSource {
   font-size: 2.2rem;
-  margin: 10px 0;
+  margin: 15px 0;
+}
+.recipeIngredients {
+  margin: 30px 0;
 }
 .recipeCategory {
   font-size: 1.6rem;
@@ -322,6 +328,15 @@ nav .createRecipe {
   display: inline-block;
   border-radius: 6px;
   margin: 0 10px 10px 0;
+}
+.recipeNotFound {
+  text-align: center;
+  margin-top: 100px;
+  font-size: 4rem;
+  font-family: 'Playfair Display';
+}
+.recipeNotFound a {
+  color: #8B0000;
 }
 .createRecipeContainer {
   width: 50%;
@@ -354,13 +369,13 @@ nav .createRecipe {
   color: #111111;
 }
 .recipeIngredients {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.5;
   padding: 20px;
-  background: #fffaf5;
+  background: #fffdfb;
   border: 1px solid #ca8f4c;
   border-radius: 6px;
-  color: #ca8f4c;
+  color: #a36d2f;
 }
 .recipeInstructions {
   line-height: 1.5;
@@ -369,16 +384,17 @@ nav .createRecipe {
 .recipeActions {
   margin-top: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 .recipeActions button {
-  width: 48%;
+  width: 25%;
   background: #FFFFFF;
   border: 1px solid #DDDDDD;
   color: #111111;
+  margin-left: 20px;
 }
 .recipeActions .updateBtn {
-  background: #c6fae5;
-  border: 1px solid #1b7545;
-  color: #1b7545;
+  background: #b90808;
+  border: 1px solid #8B0000;
+  color: white;
 }
