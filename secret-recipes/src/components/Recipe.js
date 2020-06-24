@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import RootContext from '../contexts/RootContext';
 import { useHistory} from 'react-router-dom';
 import axios from 'axios';
@@ -27,18 +27,17 @@ const Recipe = () => {
 
     if(recipe === undefined) {
         return (
-        <div className='recipeCard'>
-            <h2 className='recipeTitle'>Recipe not found.</h2>
-      </div>
+            <div className='recipeNotFound'>
+                <h2 className=''>Recipe not found. <Link to='/home'>Back to Home</Link></h2>
+            </div>
         )
     } else {
         return (
             <div className='recipeContainer'>
                 <h2 className='recipeTitle'>{recipe.title}</h2>
                 <p className='recipeSource'>&mdash; {recipe.source}</p>
-                <br/>
+                <hr />
                 <p className='recipeIngredients'>{recipe.ingredients}</p>
-                <br/>
                 <p className='recipeInstructions'>{recipe.instructions}</p>
 
                 <div className='recipeActions'>
