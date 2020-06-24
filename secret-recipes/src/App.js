@@ -13,6 +13,7 @@ import Recipe from './components/Recipe';
 
 function App() {
   let [recipes] = useState(data);
+  const [loginStatus, setLoginStatus] = useState(false)
 
   const addDummy = recipe => {
     recipes.push(recipe)
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <RootContext.Provider value={{recipes, addDummy}}>
+      <RootContext.Provider value={{recipes, addDummy, loginStatus, setLoginStatus}}>
         <Nav />
         <Switch>
 

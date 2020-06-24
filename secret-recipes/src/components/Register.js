@@ -55,7 +55,7 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
-      .post('https://secret-recipe-5.herokuapp.com/users/createnewuser', formValues)
+      .post('https://secret-recipe-5.herokuapp.com/createnewuser', formValues)
       .then(res => {
         console.log(res)
         history.push('/')
