@@ -5,7 +5,7 @@ const RecipeCard = ({ recipe }) => {
   return (
     <>
       <div className='recipeCard'>
-        <Link className='recipeTitle' to={`/recipe/${recipe.id}`}>
+        <Link className='recipeTitle' to={`/recipe/${recipe.recipeid}`}>
           {recipe.title}
         </Link>
         <p className='recipeSource'>{recipe.source}</p>

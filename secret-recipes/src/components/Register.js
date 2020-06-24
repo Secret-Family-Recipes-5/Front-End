@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import formValidation from './formValidation'
 import * as Yup from 'yup'
@@ -7,6 +7,9 @@ import axios from 'axios';
 
 
 const Register = () => {
+  useEffect(() => {
+    localStorage.removeItem('token')
+  }, [])
   let history = useHistory();
 
   const initialFormValues = {

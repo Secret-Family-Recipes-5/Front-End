@@ -1,9 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import RootContext from '../contexts/RootContext';
 
-const initialFormValues = {
+let initialFormValues = {
   "title": "",
   "source": "",
   "ingredients": "",
@@ -12,7 +11,6 @@ const initialFormValues = {
 }
 
 const CreateRecipe = () => {
-  const { addDummy } = useContext(RootContext);
   let history = useHistory();
   const [formValues, setFormValues] = useState(initialFormValues);
 
@@ -27,15 +25,14 @@ const CreateRecipe = () => {
 
   const submitHandler = event => {
     event.preventDefault()
-    addDummy(formValues);
-    history.push('/home');
-    // axios
-    //   .post('/recipes/recipe/', formValues)
-    //   .then(res => {
-    //     console.log(res)
-    //     history.push('/home')
-    //   })
-    //   .catch(err => console.log(err))
+    axios
+      .post('https://secret-recipe-5.herokuapp.com/recipes/recipe/', formValues)
+      .then(res => {
+        console.log(res)
+        history.push('/home')
+        window.location.reload()
+      })
+      .catch(err => console.log(err))
   }
 
   return (

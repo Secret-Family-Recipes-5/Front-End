@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import formValidation from './formValidation';
 import * as Yup from 'yup';
@@ -7,6 +7,9 @@ import { useHistory } from 'react-router-dom';
 import RootContext from '../contexts/RootContext';
 
 const Login = () => {
+  useEffect(() => {
+    localStorage.removeItem('token')
+  }, [])
   let history = useHistory();
   const { setLoginStatus } = useContext(RootContext);
 
