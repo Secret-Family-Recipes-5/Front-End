@@ -364,10 +364,6 @@ nav .createRecipe {
 .recipeTitle {
   margin-bottom: 30px;
 }
-.recipeTitle:hover {
-  text-decoration: none;
-  color: #111111;
-}
 .recipeIngredients {
   font-size: 1.8rem;
   line-height: 1.5;
@@ -388,10 +384,12 @@ nav .createRecipe {
 }
 .recipeActions button {
   width: 25%;
+  margin-left: 20px;
+}
+.recipeActions .deleteBtn {
   background: #FFFFFF;
   border: 1px solid #DDDDDD;
   color: #111111;
-  margin-left: 20px;
 }
 .recipeActions .updateBtn {
   background: #b90808;

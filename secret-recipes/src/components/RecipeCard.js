@@ -8,7 +8,7 @@ const RecipeCard = ({ recipe }) => {
         <Link className='recipeTitle' to={`/recipe/${recipe.recipeid}`}>
           {recipe.title}
         </Link>
-        <p className='recipeSource'>{recipe.source}</p>
+        <p className='recipeSource'>&mdash; {recipe.source}</p>
         <a className='recipeCategory'>#{recipe.category}</a>
       </div>
     </>
