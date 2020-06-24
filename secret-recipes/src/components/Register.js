@@ -88,7 +88,7 @@ const Register = () => {
 
           <label htmlFor='primaryemail'>Email</label>
           <input
-            type='text'
+            type='email'
             name='primaryemail'
             placeholder='johndoe@example.com'
             id='primaryemail'

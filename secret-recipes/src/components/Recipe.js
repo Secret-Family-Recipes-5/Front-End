@@ -15,13 +15,13 @@ const Recipe = () => {
         )
     } else {
         return (
-            <div className='recipeCard'>
+            <div className='recipeContainer'>
                 <h2 className='recipeTitle'>{recipe.title}</h2>
-                <p className='recipeSource'>{recipe.source}</p>
+                <p className='recipeSource'>&mdash; {recipe.source}</p>
                 <br/>
-                <p className='recipeSource'>{recipe.ingredients}</p>
+                <p className='recipeIngredients'>{recipe.ingredients}</p>
                 <br/>
-                <p className='recipeSource'>{recipe.instructions}</p>
+                <p className='recipeInstructions'>{recipe.instructions}</p>
           </div>
         )
     }
