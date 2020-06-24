@@ -22,9 +22,9 @@ const Nav = () => {
 
           {loginStatus ?
             <>
-              <Link className='createRecipe' to='/create'>New Recipe</Link>
               <Link to='/home'>Home</Link>
               <Link to='/' onClick={logoutHandler}>Logout</Link>
+              <Link className='createRecipe' to='/create'>New Recipe</Link>
             </>
             :
             <>
