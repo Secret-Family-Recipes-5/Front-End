@@ -6,7 +6,7 @@ const recipeFormValidation = Yup.object().shape({
     .required("⚠️ Give your recipe a name"),
   source: Yup
     .string()
-    .required("⚠️ Let be honest. You didn't invent this recipe"),
+    .required("⚠️ Lets be honest. You didn't invent this recipe"),
   ingredients: Yup
     .string()
     .required("⚠️ A recipe without any ingredients? I don't think so"),
