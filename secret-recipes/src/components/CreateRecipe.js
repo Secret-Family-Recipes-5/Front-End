@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import * as Yup from 'yup';
+import recipeFormValidation from './recipeFormValidation'
 
 let initialFormValues = {
   "title": "",
@@ -10,12 +12,42 @@ let initialFormValues = {
   "category": ""
 }
 
+const initialFormErrors = {
+  "title": "",
+  "source": "",
+  "ingredients": "",
+  "instructions": "",
+  "category": ""
+}
+
+
 const CreateRecipe = () => {
   let history = useHistory();
+
+  const [formErrors, setFormErrors] = useState(initialFormErrors);
   const [formValues, setFormValues] = useState(initialFormValues);
 
   const inputHandler = event => {
     const { name, value } = event.target
+
+    Yup
+      .reach(recipeFormValidation, name)
+      .validate(value)
+
+
+      .then(() => {
+        setFormErrors({
+          ...formErrors,
+          [name]: ''
+        })
+      })
+
+      .catch(error => {
+        setFormErrors({
+          ...formErrors,
+          [name]: error.errors[0]
+        });
+      });
 
     setFormValues({
       ...formValues,
@@ -50,6 +82,9 @@ const CreateRecipe = () => {
           placeholder='Banana Bread'
           onChange={inputHandler}
         />
+        <div className='formErrors'>
+          <p>{formErrors.title}</p>
+        </div>
 
         <label htmlFor='source'>Source</label>
         <input
@@ -59,6 +94,9 @@ const CreateRecipe = () => {
           placeholder='Aunt Patty'
           onChange={inputHandler}
         />
+        <div className='formErrors'>
+          <p>{formErrors.source}</p>
+        </div>
 
         <label htmlFor='ingredients'>Ingredients</label>
         <input
@@ -68,6 +106,9 @@ const CreateRecipe = () => {
           placeholder='Ingredients'
           onChange={inputHandler}
         />
+        <div className='formErrors'>
+          <p>{formErrors.ingredients}</p>
+        </div>
 
         <label htmlFor='instructions'>Instructions</label>
         <input
@@ -77,6 +118,9 @@ const CreateRecipe = () => {
           placeholder='Instructions'
           onChange={inputHandler}
         />
+        <div className='formErrors'>
+          <p>{formErrors.instructions}</p>
+        </div>
 
         <label htmlFor='category'>Category</label>
         <input
@@ -86,6 +130,9 @@ const CreateRecipe = () => {
           placeholder='Category'
           onChange={inputHandler}
         />
+        <div className='formErrors'>
+          <p>{formErrors.category}</p>
+        </div>
 
         <button className=''>Create Recipe</button>
 
