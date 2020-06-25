@@ -23,9 +23,28 @@ function App() {
   })
 
   useEffect(() => {
+    // The Data Returned by Server After GET /recipes/recipes:
+    // [
+    //     {
+    //       "recipeid": 3,
+    //       "title": "Testing Recipe",
+    //       "source": "My Nana",
+    //       "ingredients": "Water",
+    //       "instructions": "Put water in glass",
+    //       "category": "2",
+    //       "user": {
+    //           "userid": 1,
+    //           "username": "james",
+    //           "primaryemail": "email@email.com",
+    //           "roles": []
+    //       }
+    //   }
+    // ]
+    // user object actually comes back null so I cant use userid to determine if someone should be able to view listings
     axios
     .get(`https://secret-recipe-5.herokuapp.com/recipes/recipes`)
     .then(res => {
+      console.log(res)
       setRecipes(res.data)
     })
     .catch(err => {

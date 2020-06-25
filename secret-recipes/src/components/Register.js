@@ -60,7 +60,6 @@ const Register = () => {
     axios
       .post('https://secret-recipe-5.herokuapp.com/createnewuser', formValues)
       .then(res => {
-        console.log(res)
         history.push('/')
       })
       .catch(err => console.log(err))
