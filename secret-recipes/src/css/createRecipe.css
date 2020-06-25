@@ -1,6 +1,14 @@
 .createRecipeContainer {
-  width: 80%;
+  width: 50%;
   margin: 0 auto;
-  height: 2000px;
-  background: red;
+  margin-top: 50px;
+  background: white;
+  padding: 50px;
+  border: 1px solid #EEEEEE;
+  border-radius: 6px;
+}
+.createRecipeTitle {
+  font-size: 4rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 40px;
 }

@@ -383,13 +383,18 @@ nav .createRecipe {
   justify-content: flex-end;
 }
 .recipeActions button {
-  width: 25%;
+  width: 20%;
   margin-left: 20px;
+  padding: 8px 14px;
 }
 .recipeActions .deleteBtn {
   background: #FFFFFF;
   border: 1px solid #DDDDDD;
   color: #111111;
+  transition: background 0.2s ease;
+}
+.recipeActions .deleteBtn:hover {
+  background: #EEEEEE;
 }
 .recipeActions .updateBtn {
   background: #b90808;

@@ -33,14 +33,20 @@
   justify-content: flex-end;
 
   button {
-    width: 25%;
+    width: 20%;
     margin-left: 20px;
+    padding: 8px 14px;
   }
 
   .deleteBtn {
     background: #FFFFFF;
     border: 1px solid #DDDDDD;
     color: #111111;
+    transition: background .2s ease;
+
+    &:hover {
+      background: #EEEEEE;
+    }
   }
 
   .updateBtn {
