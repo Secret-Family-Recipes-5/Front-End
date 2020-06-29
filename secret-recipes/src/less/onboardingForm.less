@@ -10,7 +10,7 @@
 .formWrapper {
   width: 450px;
   background: white;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #eeeeee;
   padding: 50px 40px;
   border-radius: 8px;
 }
@@ -19,7 +19,7 @@
 
 h2.formTitle {
   font-size: 4rem;
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
   margin-bottom: 15px;
   font-weight: 500;
 }
@@ -29,7 +29,7 @@ h2.formTitle {
 p.formDesc {
   font-size: 2rem;
   line-height: 1.4;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   margin-bottom: 20px;
 }
 
@@ -37,7 +37,7 @@ p.formDesc {
 
 hr {
   height: 1px;
-  background: #EEEEEE;
+  background: #eeeeee;
   border: none;
   margin-bottom: 30px;
 }
@@ -48,21 +48,25 @@ label {
   display: inline-block;
 }
 
-input[type=text], input[type=password], input[type=email], button {
+input[type="text"],
+input[type="password"],
+input[type="email"],
+button {
   padding: 15px 20px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   display: flex;
   flex-direction: column;
   width: 100%;
   margin-bottom: 10px;
   border-radius: 6px;
   font-size: 1.6rem;
-  box-shadow: 0px .5px 0px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 0.5px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.1);
-  border: 1px solid #CCCCCC
+input[type="text"]:focus,
+input[type="password"]:focus {
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid #cccccc;
 }
 
 .authLink {
@@ -89,11 +93,11 @@ button {
   position: relative;
 
   &:before {
-    content: '\2192';
+    content: "\2192";
     position: absolute;
     right: 40px;
     opacity: 0;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
 }
 
@@ -104,7 +108,7 @@ button:hover:before {
 
 ::placeholder {
   font-size: 1.6rem;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 // Terms of service

@@ -7,25 +7,25 @@
 .formWrapper {
   width: 450px;
   background: white;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #eeeeee;
   padding: 50px 40px;
   border-radius: 8px;
 }
 h2.formTitle {
   font-size: 4rem;
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
   margin-bottom: 15px;
   font-weight: 500;
 }
 p.formDesc {
   font-size: 2rem;
   line-height: 1.4;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   margin-bottom: 20px;
 }
 hr {
   height: 1px;
-  background: #EEEEEE;
+  background: #eeeeee;
   border: none;
   margin-bottom: 30px;
 }
@@ -37,7 +37,7 @@ label {
 input,
 button {
   padding: 15px 20px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -53,14 +53,14 @@ button {
   margin-top: 20px;
   cursor: pointer;
   background: #b90808;
-  border: 1px solid #8B0000;
+  border: 1px solid #8b0000;
   border-radius: 6px;
   color: white;
   font-size: 1.6rem;
   position: relative;
 }
 button:before {
-  content: '\2192';
+  content: "\2192";
   position: absolute;
   right: 40px;
   opacity: 0;
@@ -72,7 +72,7 @@ button:hover:before {
 }
 ::placeholder {
   font-size: 1.6rem;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 .formErrors p {
   font-size: 1.6rem;

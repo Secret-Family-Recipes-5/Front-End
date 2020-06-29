@@ -1,60 +1,68 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import Category from './Category'
-import RootContext from '../contexts/RootContext';
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Category from "./Category";
+import RootContext from "../contexts/RootContext";
 
 const Nav = () => {
-
-  const { loginStatus, setLoginStatus, setSearchValues } = useContext(RootContext);
+  const { loginStatus, setLoginStatus, setSearchValues } = useContext(
+    RootContext
+  );
 
   // Search
   const inputValueHandler = (event) => {
     setSearchValues(event.target.value);
-  }
-
+  };
 
   useEffect(() => {
-    localStorage.getItem('token') ? setLoginStatus(true) : setLoginStatus(false)
-  }, [setLoginStatus])
+    localStorage.getItem("token")
+      ? setLoginStatus(true)
+      : setLoginStatus(false);
+  }, [setLoginStatus]);
 
   const logoutHandler = () => {
-    localStorage.removeItem('token')
-    setLoginStatus(false)
-  }
+    localStorage.removeItem("token");
+    setLoginStatus(false);
+  };
 
   return (
-    <div className='navContainer'>
-      <div className='navWrapper'>
-        <div className='logo'>
-          <Link to='/home'>Secret Family Recipes Cookbook</Link>
-          {loginStatus ? <input type='text' placeholder='Search recipes...' onChange={inputValueHandler}></input> : null}
+    <div className="navContainer">
+      <div className="navWrapper">
+        <div className="logo">
+          <Link to="/home">Secret Family Recipes Cookbook</Link>
+          {loginStatus ? (
+            <input
+              type="text"
+              placeholder="Search recipes..."
+              onChange={inputValueHandler}
+            ></input>
+          ) : null}
         </div>
         <nav>
-
-          {loginStatus ?
+          {loginStatus ? (
             <>
-              <Link to='/home'>Home</Link>
-              <Link to='/' onClick={logoutHandler}>Logout</Link>
-              <Link className='createRecipe' to='/create'>New Recipe</Link>
+              <Link to="/home">Home</Link>
+              <Link to="/" onClick={logoutHandler}>
+                Logout
+              </Link>
+              <Link className="createRecipe" to="/create">
+                New Recipe
+              </Link>
             </>
-            :
+          ) : (
             <>
-              <Link to='/'>Login</Link> <Link to='/register'>Register</Link>
+              <Link to="/">Login</Link> <Link to="/register">Register</Link>
             </>
-          }
+          )}
         </nav>
       </div>
 
-      {loginStatus ?
-        <div className='categoryWrapper'>
+      {loginStatus ? (
+        <div className="categoryWrapper">
           <Category />
         </div>
-        :
-        null
-      }
-
+      ) : null}
     </div>
   );
-}
+};
 
-export default Nav
+export default Nav;
